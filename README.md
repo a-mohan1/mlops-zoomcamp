@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="80%" src="images/IMG_20230323_134059_927.png" alt="MLOps Zoomcamp">
+  <img width="80%" src="images/banner-2025.png" alt="MLOps Zoomcamp">
 </p>
 
 <h1 align="center">
@@ -7,7 +7,7 @@
 </h1>
 
 <p align="center">
-MLOps (machine learning operations) is becoming a must-know skill for many data professionals. Master the fundamentals of MLOps, from training and experimentation to deployment and monitoring.
+MLOps (machine learning operations) is a must-know skill for many data professionals. Master the fundamentals of MLOps, from training and experimentation to deployment and monitoring.
 </p>
 
 <p align="center">
