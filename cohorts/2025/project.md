@@ -10,20 +10,20 @@ Remember that to pass the project, you must evaluate 3 peers. If you don't do th
 
 ### Project Attempt #1
 
-* Project: https://courses.datatalks.club/mlops-zoomcamp-2024/project/project1
-* Review: https://courses.datatalks.club/mlops-zoomcamp-2024/project/project1/eval
+* Project: https://courses.datatalks.club/mlops-zoomcamp-2025/project/project1
+* Review: https://courses.datatalks.club/mlops-zoomcamp-2025/project/project1/eval
 
 
 ### Project Attempt #2
 
-* Project: https://courses.datatalks.club/mlops-zoomcamp-2024/project/project2
-* Review: https://courses.datatalks.club/mlops-zoomcamp-2024/project/project2/eval
+* Project: https://courses.datatalks.club/mlops-zoomcamp-2025/project/project2
+* Review: https://courses.datatalks.club/mlops-zoomcamp-2025/project/project2/eval
 
 
-> **Important**: update your "Certificate name" here: https://courses.datatalks.club/mlops-zoomcamp-2024/enrollment -
+> **Important**: update your "Certificate name" here: https://courses.datatalks.club/mlops-zoomcamp-2025/enrollment -
 this is what we will use when generating certificates for you.
 
 
 ## Evaluation criteria
 
-See [here](../../../07-project/README.md)
+See [here](../../07-project/README.md)
