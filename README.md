@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="80%" src="images/banner-2025.png" alt="MLOps Zoomcamp">
+  <img width="80%" src="images/banner-2025.jpg" alt="MLOps Zoomcamp">
 </p>
 
 <h1 align="center">
