@@ -19,7 +19,7 @@ MLOps (machine learning operations) is a must-know skill for many data professio
 <a href="https://app.slack.com/client/T01ATQK62F8/C01FABYF2RG">#course-mlops-zoomcamp Channel</a> •
 <a href="https://t.me/dtc_courses">Telegram Announcements</a> •
 <a href="https://www.youtube.com/playlist?list=PL3MmuxUbc_hIUISrluw_A7wDSmfOhErJK">Course Playlist</a> •
-<a href="https://docs.google.com/document/d/19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw/edit?usp=sharing">FAQ</a> •
+<a href="https://docs.google.com/document/d/12TlBfhIiKtyBv8RnsoJR6F72bkPDGEvPOItJIxaEzE0">FAQ</a> •
 <a href="https://ctt.ac/fH67W">Tweet about the Course</a>
 </p>
 
