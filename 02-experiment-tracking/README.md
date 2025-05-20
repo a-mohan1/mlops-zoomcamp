@@ -2,6 +2,8 @@
 
 
 * [Slides](https://drive.google.com/file/d/1YtkAtOQS3wvY7yts_nosVlXrLQBq5q37/view?usp=sharing)
+  
+* **NOTE:** `list_experiments` has been replaced by `search_experiments`. Some notebooks used in this course might need to be updated. | [Reference](https://github.com/mlflow/mlflow/issues/8941)
 
 
 ## 2.1 Experiment tracking intro
