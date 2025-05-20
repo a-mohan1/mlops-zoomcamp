@@ -161,4 +161,5 @@ Did you take notes? Add them here:
 * [Module 1 Notes -Video 1.2 Env Prep Ec2 troubleshooting notes for remote-ssh vscode to ec2](https://github.com/thatwonguy/mlops-zoomcamp/blob/personal/01-intro/README.md)
 * [Ch1 notes by Marcus](https://github.com/mleiwe/mlops-zoomcamp/blob/Ch1_Marcus/cohorts/2024/01-intro/Ch1_Notes.md)
   * [GCP setup instructions](https://github.com/mleiwe/mlops-zoomcamp/blob/Ch1_Marcus/cohorts/2024/01-intro/GoogleCloudSetUpNotes.md)
+* [GCP Environment Setup with Terraform + Cloud-Init by Artem](https://github.com/Ladn0/mlops-zoomcamp/tree/main/01-intro/notes)
 * Send a PR, add your notes above this line
