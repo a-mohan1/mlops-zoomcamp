@@ -163,4 +163,5 @@ Did you take notes? Add them here:
 * [GCP setup instructions](https://github.com/mleiwe/mlops-zoomcamp/blob/Ch1_Marcus/cohorts/2024/01-intro/GoogleCloudSetUpNotes.md)
 * [Machine Learning Essentials: FAQs on Linear Regression, One-Hot Encoding & RMSE](https://github.com/niting9881/course-mlops-zoomcamp/blob/main/01-intro/README.md)
 * [GCP Environment Setup with Terraform + Cloud-Init by Artem](https://github.com/Ladn0/mlops-zoomcamp/tree/main/01-intro/notes)
+* [Week 1 - local setup hints by hannarud](https://github.com/hannarud/mlops-zoomcamp-2025/blob/main/week1_notes.md)
 * Send a PR, add your notes above this line
