@@ -1,34 +1,25 @@
-## Homework [DRAFT]
+## Homework
 
 The goal of this homework is to create a simple training pipeline, use mlflow to track experiments and register best model, but use Mage for it.
 
 We'll use [the same NYC taxi dataset](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page), the **Yellow** taxi data for March, 2023. 
 
-## Question 1. Run Mage
+## Question 1. Select the Tool
 
-First, let's run Mage with Docker Compose. Follow the quick start guideline. 
+You can use the same tool you used when completing the module,
+or choose a different one for your homework.
 
-What's the version of Mage we run? 
-
-(You can see it in the UI)
+What's the name of the orchestrator you chose? 
 
 
-## Question 2. Creating a project
+## Question 2. Version
 
-Now let's create a new project. We can call it "homework_03", for example.
+What's the version of the orchestrator? 
 
-How many lines are in the created `metadata.yaml` file? 
-
-- 35
-- 45
-- 55
-- 65
 
 ## Question 3. Creating a pipeline
 
-Let's create an ingestion code block.
-
-In this block, we will read the March 2023 Yellow taxi trips data.
+Let's read the March 2023 Yellow taxi trips data.
 
 How many records did we load? 
 
@@ -37,19 +28,19 @@ How many records did we load?
 - 3,403,766
 - 3,603,766
 
+(Include a print statement in your code)
+
 ## Question 4. Data preparation
 
+Let's continue with pipeline creation.
 
-Let's use the same logic for preparing the data we used previously. We will need to create a transformer code block and put this code there.
+We will use the same logic for preparing the data we used previously. 
 
 This is what we used (adjusted for yellow dataset):
 
 ```python
 def read_dataframe(filename):
     df = pd.read_parquet(filename)
-
-    df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
-    df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
 
     df['duration'] = df.tpep_dropoff_datetime - df.tpep_pickup_datetime
     df.duration = df.duration.dt.total_seconds() / 60
@@ -62,10 +53,9 @@ def read_dataframe(filename):
     return df
 ```
 
-Let's adjust it and apply to the data we loaded in question 3. 
+Let's apply to the data we loaded in question 3. 
 
 What's the size of the result? 
-
 
 - 2,903,766
 - 3,103,766
@@ -95,58 +85,6 @@ Hint: print the `intercept_` field in the code block
 
 The model is trained, so let's save it with MLFlow.
 
-If you run mage with docker-compose, stop it with Ctrl+C or 
-
-```bash
-docker-compose down
-```
-
-Let's create a dockerfile for mlflow, e.g. `mlflow.dockerfile`:
-
-```dockerfile
-FROM python:3.10-slim
-
-RUN pip install mlflow==2.12.1
-
-EXPOSE 5000
-
-CMD [ \
-    "mlflow", "server", \
-    "--backend-store-uri", "sqlite:///home/mlflow_data/mlflow.db", \
-    "--host", "0.0.0.0", \
-    "--port", "5000" \
-]
-```
-
-And add it to the docker-compose.yaml:
-
-```yaml
-  mlflow:
-    build:
-      context: .
-      dockerfile: mlflow.dockerfile
-    ports:
-      - "5000:5000"
-    volumes:
-      - "${PWD}/mlflow_data:/home/mlflow_data/"
-    networks:
-      - app-network
-```
-
-Note that `app-network` is the same network as for mage and postgres containers.
-If you use a different compose file, adjust it.
-
-We should already have `mlflow==2.12.1` in requirements.txt in the mage project we created for the module. If you're starting from scratch, add it to your requirements.
-
-Next, start the compose again and create a data exporter block.
-
-In the block, we
-
-* Log the model (linear regression)
-* Save and log the artifact (dict vectorizer)
-
-If you used the suggested docker-compose snippet, mlflow should be accessible at `http://mlflow:5000`.
-
 Find the logged model, and find MLModel file. What's the size of the model? (`model_size_bytes` field):
 
 * 14,534
@@ -154,16 +92,8 @@ Find the logged model, and find MLModel file. What's the size of the model? (`mo
 * 4,534
 * 1,534
 
-> Note: typically we do last two steps in one code block.
-
 
 ## Submit the results
 
 * Submit your results here: https://courses.datatalks.club/mlops-zoomcamp-2025/homework/hw3
 * If your answer doesn't match options exactly, select the closest one.
-
-
-
-
-
-
