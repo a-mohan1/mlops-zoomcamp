@@ -53,6 +53,7 @@ report = Report(metrics = [
 
 
 CONNECTION_STRING = "host=localhost port=5432 user=postgres password=example"
+CONNECTION_STRING_DB = CONNECTION_STRING + " dbname=test"
 
 
 @task
@@ -61,7 +62,7 @@ def prep_db():
 		res = conn.execute("SELECT 1 FROM pg_database WHERE datname='test'")
 		if len(res.fetchall()) == 0:
 			conn.execute("create database test;")
-		with psycopg.connect(CONNECTION_STRING) as conn:
+		with psycopg.connect(CONNECTION_STRING_DB) as conn:
 			conn.execute(create_table_statement)
 
 @task
@@ -82,7 +83,7 @@ def calculate_metrics_postgresql(i):
 	prediction_drift = result['metrics'][0]['value']
 	num_drifted_columns = result['metrics'][1]['value']['count']
 	share_missing_values = result['metrics'][2]['value']['share']
-	with psycopg.connect(CONNECTION_STRING, autocommit=True) as conn:
+	with psycopg.connect(CONNECTION_STRING_DB, autocommit=True) as conn:
 		with conn.cursor() as curr:
 			curr.execute(
 				"insert into dummy_metrics(timestamp, prediction_drift, num_drifted_columns, share_missing_values) values (%s, %s, %s, %s)",
