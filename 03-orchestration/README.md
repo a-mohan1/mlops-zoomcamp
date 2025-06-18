@@ -123,4 +123,5 @@ When you run it, mlflow should be accessible at `http://mlflow:5000`.
 
 Did you take notes? Add them here:
 
+* [Week 3 - workflow orchestration & Prefect by hannarud](https://github.com/hannarud/mlops-zoomcamp-2025/blob/main/week3_notes.md)
 * Send a PR, add your notes above this line
