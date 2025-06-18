@@ -14,13 +14,11 @@
 
 ## 3.3 Using an Orchestrator
 
-There's no video for this unit, you can 
-
 Now that we converted the notebook into a python script, we 
 can use an orchestrator to turn the script into a production
 pipeline.
 
-You can use ChatGPT to help you with this.
+There's no video for this unit, but you can use ChatGPT to help you with this.
 
 ### Step 1: Choosing the Tool
 
