@@ -8,7 +8,7 @@ Unlike traditional Kaggle competitions that focus only on model accuracy, this c
 
 ## Quick Links
 - **Competition Platform**: https://youare.bot/ 
-  - Register your bot/classifier in the "Register your API" section
+  - Register your classifier in the "Register your API" section
   - View leaderboards and track your performance
 - [Detailed Overview (Slides)](https://docs.google.com/presentation/d/1-DIRH8wh-Rc251oZLjFNzQF0Fm0yUYe9PmLm00b3SyM/edit?usp=sharing)
 - [Competition Overview Video](https://www.youtube.com/watch?v=ZxUVBG4z5uE)
@@ -16,13 +16,13 @@ Unlike traditional Kaggle competitions that focus only on model accuracy, this c
 ## Competition Overview
 
 ### What You'll Build
-Choose one of two challenges:
-1. **Bot**: Create a chatbot that tries to convince humans it's a real person
-2. **Classifier**: Build an ML model that detects whether a chat participant is a bot or human
+
+
+**Classifier**: Build an ML model that detects whether a chat participant is a bot or human
 
 ### Scoring
-- **Bots**: Scored on deceptiveness (ability to fool humans)
-- **Classifiers**: Evaluated on both:
+
+**Classifiers**: Evaluated on both:
   - ML metrics: accuracy, ROC, precision, recall, F-score
   - Technical metrics: latency, uptime, response rate
 
