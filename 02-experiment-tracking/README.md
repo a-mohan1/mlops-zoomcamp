@@ -95,4 +95,5 @@ Did you take notes? Add them here:
 * [MLFlow setup and Experiment Tracking by Hokfu](https://github.com/Hokfu/MLOps_Zoomcamp_Study/blob/main/02-experiment-tracking/README.md)
 * [2025 Cohort | Notes on MLflow & Hyperopt by Gabi Fonseca](https://github.com/fonsecagabriella/ml_ops/blob/main/02_experiment_tracking/__notes.md)
 * [Homework 2 Experiment and Tracking article by Srikanth Ganji](https://medium.com/@srikanth.unix07/mlops-zoomcamp-2025-homework-2-experiment-tracking-with-mlflow-4ea1ed783531)
+* [Week-2 - Detailed Notes of MLFlow, Experiment Tracking, Notebooks, Homework by Muhammad Shifa](https://github.com/MuhammadShifa/mlops-zoomcamp2025/blob/main/02-experiment-tracking/README.md)
 * Send a PR, add your notes above this line

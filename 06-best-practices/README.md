@@ -50,15 +50,6 @@
 
 More information [here](../cohorts/2025/06-best-practices/homework.md).
 
-
-### Notes
-
-Did you take notes? Add them here:
-
-* [Week 6a Notes by M. Ayoub C.](https://gist.github.com/Qfl3x/267d4cff36b58de67b4e33ca3fc9983f)
-* [Week 6: Unit test/Integration test/Test Automation/Could service test with LocalStack/Code quality/Git pre-commit/Makefile by Hongfan (Amber)](https://github.com/Muhongfan/MLops/blob/main/06-best-practice/README.md)
-* Send a PR, add your notes above this line
-
 <br>
 
 ## Part B
@@ -157,9 +148,13 @@ https://www.youtube.com/watch?v=jCNxqXCKh2s&list=PL3MmuxUbc_hIUISrluw_A7wDSmfOhE
     * Updating lambda env variables [Post deploy](https://github.com/Nakulbajaj101/mlops-zoomcamp/blob/main/06-best-practices/code-practice/deploy/run_apply_local.sh)
     * Making use of make file commands in CICD [CICD](https://github.com/Nakulbajaj101/mlops-zoomcamp/tree/main/.github/workflows)
 
+
 ### Notes
 
 Did you take notes? Add them here:
+* [Week 6a Notes by M. Ayoub C.](https://gist.github.com/Qfl3x/267d4cff36b58de67b4e33ca3fc9983f)
+* [Week 6: Unit test/Integration test/Test Automation/Could service test with LocalStack/Code quality/Git pre-commit/Makefile by Hongfan (Amber)](https://github.com/Muhongfan/MLops/blob/main/06-best-practice/README.md)
 * [Week 6 Best Practices: 2023](https://github.com/dimzachar/mlops-zoomcamp/tree/master/notes/Week_6)
 * [Cohort 2025| Best Practices notes and FAQ by Nitin Gupta](https://github.com/niting9881/course-mlops-zoomcamp/blob/main/06-best-practices/README.md)
+* [Week-6: Detailed notes about unit-testing/integration-testing/make/makefile/pre-commit/localstack/terraform/ci/cd, codes/scripts and homwork by Muhammad Shifa](https://github.com/MuhammadShifa/mlops-zoomcamp2025/blob/main/06-best-practices/code/README.md)
 * Send a PR, add your notes above this line
