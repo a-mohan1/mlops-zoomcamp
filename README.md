@@ -19,7 +19,7 @@ MLOps (machine learning operations) is a must-know skill for many data professio
 <a href="https://app.slack.com/client/T01ATQK62F8/C01FABYF2RG">#course-mlops-zoomcamp Channel</a> •
 <a href="https://t.me/dtc_courses">Telegram Announcements</a> •
 <a href="https://www.youtube.com/playlist?list=PL3MmuxUbc_hIUISrluw_A7wDSmfOhErJK">Course Playlist</a> •
-<a href="https://docs.google.com/document/d/12TlBfhIiKtyBv8RnsoJR6F72bkPDGEvPOItJIxaEzE0">FAQ</a> •
+<a href="https://datatalks.club/faq/mlops-zoomcamp.html">FAQ</a> •
 <a href="https://ctt.ac/fH67W">Tweet about the Course</a>
 </p>
 
@@ -34,7 +34,7 @@ MLOps (machine learning operations) is a must-know skill for many data professio
 All course materials are freely available for independent study. Follow these steps:
 1. Watch the course videos.
 2. Join the [Slack community](https://datatalks.club/slack.html).
-3. Refer to the [FAQ document](https://docs.google.com/document/d/12TlBfhIiKtyBv8RnsoJR6F72bkPDGEvPOItJIxaEzE0/edit) for guidance.
+3. Refer to the [FAQ document](https://datatalks.club/faq/mlops-zoomcamp.html) for guidance.
 
 ## Syllabus
 The course consists of structured modules, hands-on workshops, and a final project to reinforce your learning. Each module introduces core MLOps concepts and tools.
