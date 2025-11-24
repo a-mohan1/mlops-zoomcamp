@@ -214,6 +214,8 @@ __marimo__/
 *.csv
 # pickle
 *.pkl
+# Database files
+*.db
 
 # Saved models and mlflow
 02-experiment-tracking/models
