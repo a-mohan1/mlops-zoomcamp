@@ -212,3 +212,9 @@ __marimo__/
 *.png
 # csv
 *.csv
+# pickle
+*.pkl
+
+# Saved models and mlflow
+02-experiment-tracking/models
+02-experiment-tracking/mlruns
