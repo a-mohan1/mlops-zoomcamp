@@ -1,2 +1,0 @@
-# mlops-zoomcamp
-MLOps - zoomcamp
