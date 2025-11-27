@@ -217,6 +217,8 @@ __marimo__/
 # Database files
 *.db
 
-# Saved models and mlflow
+# Saved models and mlflow folders
 02-experiment-tracking/models
 02-experiment-tracking/mlruns
+02-experiment-tracking/preprocessor/
+02-experiment-tracking/running-mlflow-examples/mlruns/
