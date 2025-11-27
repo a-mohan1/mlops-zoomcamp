@@ -222,3 +222,4 @@ __marimo__/
 02-experiment-tracking/mlruns
 02-experiment-tracking/preprocessor/
 02-experiment-tracking/running-mlflow-examples/mlruns/
+preprocessor/
