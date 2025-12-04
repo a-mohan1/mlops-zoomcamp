@@ -6,7 +6,6 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import root_mean_squared_error
 
 import mlflow
-from mlflow.models.signature import infer_signature
 
 def load_pickle(filename: str):
     with open(filename, "rb") as f_in:
@@ -30,28 +29,20 @@ def run_train(data_path: str):
         rf = RandomForestRegressor(**rf_params)
         rf.fit(X_train, y_train)
         y_pred = rf.predict(X_val)
-
-        mlflow.log_params(rf_params)
-        mlflow.log_params(rf.get_params())
+    
         rmse = root_mean_squared_error(y_val, y_pred)
-        mlflow.log_metric("rmse", rmse)
 
-        mlflow.log_artifact(os.path.join(".", data_path, "train.pkl"), artifact_path="data")
-        mlflow.log_artifact(os.path.join(".", data_path, "val.pkl"), artifact_path='data')
-
-        signature = infer_signature(X_train, rf.predict(X_train))
-        mlflow.sklearn.log_model(rf, artifact_path='models', signature=signature, input_example=X_train[:5])
-        mlflow.set_tags({'model_type': 'RandomForest', 'stage': 'validation'})
-
+    
 if __name__ == '__main__':
     TRACKING_SERVER_HOST = "127.0.0.1"
     mlflow.set_tracking_uri(f"http://{TRACKING_SERVER_HOST}:5000")
 
-    experiment_name = "nyc-taxi-experiment1"
+    experiment_name = "nyc-taxi-experiment2"
     experiment = mlflow.get_experiment_by_name(experiment_name)
     if experiment is None:
         mlflow.create_experiment(experiment_name)
     
     mlflow.set_experiment(experiment_name)
+    mlflow.sklearn.autolog()
     
     run_train()

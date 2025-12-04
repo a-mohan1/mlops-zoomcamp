@@ -5,6 +5,8 @@ import pandas as pd
 
 from sklearn.feature_extraction import DictVectorizer
 
+from pathlib import WindowsPath
+
 
 def dump_pickle(obj, filename: str):
     with open(filename, "wb") as f_out:
@@ -36,17 +38,22 @@ def preprocess(df: pd.DataFrame, dv: DictVectorizer, fit_dv: bool = False):
     return X, dv
 
 
-@click.command()
+
+"""
 @click.option(
     "--raw_data_path",
     help="Location where the raw NYC taxi trip data was saved"
 )
+"""
+@click.command()
 @click.option(
     "--dest_path",
     help="Location where the resulting files will be saved"
 )
-def run_data_prep(raw_data_path: str, dest_path: str, dataset: str = "green"):
+def run_data_prep(dest_path: str, dataset: str = "green"):
+#def run_data_prep(raw_data_path: str, dest_path: str, dataset: str = "green"):
     # Load parquet files
+    """
     df_train = read_dataframe(
         os.path.join(raw_data_path, f"{dataset}_tripdata_2023-01.parquet")
     )
@@ -56,6 +63,11 @@ def run_data_prep(raw_data_path: str, dest_path: str, dataset: str = "green"):
     df_test = read_dataframe(
         os.path.join(raw_data_path, f"{dataset}_tripdata_2023-03.parquet")
     )
+    """
+    df_train = read_dataframe(f'https://d37ci6vzurychx.cloudfront.net/trip-data/{dataset}_tripdata_2025-01.parquet')
+    df_val = read_dataframe(f'https://d37ci6vzurychx.cloudfront.net/trip-data/{dataset}_tripdata_2025-02.parquet')
+    df_test = read_dataframe(f'https://d37ci6vzurychx.cloudfront.net/trip-data/{dataset}_tripdata_2025-03.parquet')
+    
 
     # Extract the target
     target = 'duration'
@@ -77,7 +89,9 @@ def run_data_prep(raw_data_path: str, dest_path: str, dataset: str = "green"):
     dump_pickle((X_train, y_train), os.path.join(dest_path, "train.pkl"))
     dump_pickle((X_val, y_val), os.path.join(dest_path, "val.pkl"))
     dump_pickle((X_test, y_test), os.path.join(dest_path, "test.pkl"))
-
+    click.echo(f"Files are saved to: {dest_path}")
 
 if __name__ == '__main__':
     run_data_prep()
+    
+
