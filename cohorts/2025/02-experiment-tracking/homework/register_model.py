@@ -40,6 +40,8 @@ def train_and_log_model(data_path, params):
         mlflow.log_metric("val_rmse", val_rmse)
         test_rmse = root_mean_squared_error(y_test, rf.predict(X_test))
         mlflow.log_metric("test_rmse", test_rmse)
+        # Log the model
+        mlflow.sklearn.log_model(rf, "model")
 
 
 @click.command()
@@ -59,7 +61,9 @@ def run_register_model(data_path: str, top_n: int):
     client = MlflowClient()
 
     # Retrieve the top_n model runs and log the models
-    experiment = client.get_experiment_by_name(EXPERIMENT_NAME)
+    experiment = client.get_experiment_by_name(HPO_EXPERIMENT_NAME)
+    if experiment is None:
+        raise ValueError(f"Experiment '{HPO_EXPERIMENT_NAME}' not found")
     runs = client.search_runs(
         experiment_ids=experiment.experiment_id,
         run_view_type=ViewType.ACTIVE_ONLY,
@@ -71,15 +75,31 @@ def run_register_model(data_path: str, top_n: int):
 
     # Select the model with the lowest test RMSE
     experiment = client.get_experiment_by_name(EXPERIMENT_NAME)
-    best_run = client.search_runs(experiment_ids=['1'])[0].info.run_id
-
-    # Register the best model
-    # mlflow.register_model( ... )
-    mlflow.register_model(
-    model_uri=f"runs:/{best_run}/models",
-    name='nyc-taxi'
+    best_run = client.search_runs(
+        experiment_ids=experiment.experiment_id,
+        run_view_type=ViewType.ACTIVE_ONLY,
+        max_results=1,
+        order_by=["metrics.test_rmse ASC"]
     )
 
+    if not best_run:
+        raise ValueError(f"No runs found in experiment '{EXPERIMENT_NAME}'")
+    
+    best_run_id = best_run[0].info.run_id
+    best_test_rmse = best_run[0].data.metrics['test_rmse']
+
+    # Register the best model
+    mlflow.register_model(
+        model_uri=f"runs:/{best_run_id}/model",
+        name='nyc-taxi'
+    )
+    print(f"Registered model from run {best_run_id} with test_rmse: {best_test_rmse}")
+
+    model_name = "nyc-taxi"
+    latest_versions = client.get_latest_versions(name=model_name)
+
+    for version in latest_versions:
+        print(f"version: {version.version}, stage: {version.current_stage}")
 
 if __name__ == '__main__':
     run_register_model()
