@@ -226,3 +226,6 @@ preprocessor/
 mlruns/
 output/
 homework_data/
+mlartifacts/
+run_id.txt
+models/

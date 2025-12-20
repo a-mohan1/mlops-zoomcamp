@@ -1,0 +1,17 @@
+# Prefect project configuration
+# Generic metadata about this project
+name: zoom_mlops
+prefect-version: 3.4.25
+
+# Build, push, pull steps (can be null/empty if not needed)
+build: null
+push: null
+pull: null
+
+# Deployments
+deployments:
+  - name: nyc_taxi
+    entrypoint: 03-orchestration/code/duration_prediction_prefect.py:main_flow
+    work_pool:
+      name: zoompool
+    schedule: null  # Add if you want scheduling

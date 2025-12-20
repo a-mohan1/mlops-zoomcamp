@@ -1,0 +1,5 @@
+deployments:
+- name: nyc_taxi
+  entrypoint: 03-orchestration/code/duration_prediction_prefect.py:main_flow
+  work_pool: 
+    name: zoompool
