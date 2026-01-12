@@ -234,4 +234,4 @@ models/
 mlops-env/
 
 # VSCode settings
-./vscode
+.vscode/
