@@ -3,7 +3,7 @@ FROM public.ecr.aws/lambda/python:3.9
 RUN pip install -U pip==24.0
 RUN pip install pipenv
 
-COPY [ "Pipfile", "Pipfile.lock", "./" ]
+#COPY [ "Pipfile", "Pipfile.lock", "./" ]
 
 # Use pip directly instead of pipenv to avoid the metadata issue
 #RUN pipenv install --system --deploy
