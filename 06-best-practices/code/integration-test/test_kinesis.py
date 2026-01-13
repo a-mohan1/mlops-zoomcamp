@@ -8,7 +8,11 @@ import boto3
 from deepdiff import DeepDiff
 
 kinesis_endpoint = os.getenv('KINESIS_ENDPOINT_URL', "http://localhost:4566")
-kinesis_client = boto3.client('kinesis', endpoint_url=kinesis_endpoint)
+kinesis_client = boto3.client('kinesis', 
+                            endpoint_url=kinesis_endpoint, 
+                            region_name='us-east-1',
+                            aws_access_key_id='test',
+                            aws_secret_access_key='test')
 
 stream_name = os.getenv('PREDICTIONS_STREAM_NAME', 'ride_predictions')
 shard_id = 'shardId-000000000000'
