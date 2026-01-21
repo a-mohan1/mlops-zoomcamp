@@ -17,6 +17,21 @@ kinesis_client = boto3.client('kinesis',
 stream_name = os.getenv('PREDICTIONS_STREAM_NAME', 'ride_predictions')
 shard_id = 'shardId-000000000000'
 
+# PUT A RECORD FIRST
+test_data = {
+    'model': 'ride_duration_prediction_model',
+    'version': 'Test123',
+    'prediction': {
+        'ride_duration': 21.3,
+        'ride_id': 256,
+    },
+}
+
+kinesis_client.put_record(
+    StreamName=stream_name,
+    Data=json.dumps(test_data),
+    PartitionKey='test-key'
+)
 
 shard_iterator_response = kinesis_client.get_shard_iterator(
     StreamName=stream_name,
