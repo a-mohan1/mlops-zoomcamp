@@ -1,0 +1,45 @@
+# example
+name: ML Pipeline
+
+on:
+  schedule:
+  #  - cron: '0 8 * * *' # cron job runs at 8 AM
+  workflow_dispatch:
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest # or self-hosted for server, configure in Settings, Actions, Runners
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt # should be in root
+
+      - name: Run linting
+        run: |
+          pip install flake8
+          flake8 . --max-line-length=88
+
+      - name: Run unit tests
+        run: |
+          pytest tests/
+
+      - name: Run ML script
+        env: # add in repo Settings, Secrets, Actions, Repo secrets
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+        run: |
+          python my_ml_script.py
