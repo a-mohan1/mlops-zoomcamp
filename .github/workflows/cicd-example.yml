@@ -2,8 +2,8 @@
 name: ML Pipeline
 
 on:
-  schedule:
-  #  - cron: '0 8 * * *' # cron job runs at 8 AM
+  #schedule:
+    #- cron: '0 8 * * *' # cron job runs at 8 AM
   workflow_dispatch:
 
 jobs:
