@@ -32,7 +32,7 @@ jobs:
       - name: TF Apply
         id: tf-apply
         working-directory: '06-best-practices/code/infrastructure'
-        if: ${{ steps.tf-plan.outcome }} == 'success'
+        if: ${{ success() && steps.tf-plan.outcome == 'success' }}
         run: |
           terraform apply -auto-approve -var-file=vars/prod.tfvars
           echo "::set-output name=ecr_repo::$(terraform output ecr_repo | xargs)"
