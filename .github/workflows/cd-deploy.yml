@@ -55,7 +55,7 @@ jobs:
         run: |
           docker build -t ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG} .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image_uri::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          echo "image_uri=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
       # Deploy
       - name: Get model artifacts
@@ -73,7 +73,7 @@ jobs:
           export RUN_ID=$(aws s3api list-objects-v2 --bucket ${MODEL_BUCKET_DEV} \
           --query 'sort_by(Contents, &LastModified)[-1].Key' --output=text | cut -f2 -d/)
           aws s3 sync s3://${MODEL_BUCKET_DEV} s3://${MODEL_BUCKET_PROD}
-          echo "::set-output name=run_id::${RUN_ID}"
+          echo "run_id=${RUN_ID}" >> $GITHUB_OUTPUT
 
       - name: Update Lambda
         env:
