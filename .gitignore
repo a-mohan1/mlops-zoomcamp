@@ -230,6 +230,10 @@ mlartifacts/
 run_id.txt
 models/
 
+# Saved data and workspace folders
+data/
+workspace/
+
 # Environment files
 mlops-env/
 
